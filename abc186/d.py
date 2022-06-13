@@ -1,11 +1,11 @@
 n = int(input())
-l = list(map(int, input().split()))
+a = list(map(int, input().split()))
+
+a.sort(reverse=True)
 
 ans = 0
-
-for i in range(len(l)-1):
-    for j in range(i+1,len(l)):
-        ans += abs(l[i] - l[j])
+for i, v in enumerate(a):
+    ans += v * (n - (i + 1))
+    ans -= v * i
 
 print(ans)
-
